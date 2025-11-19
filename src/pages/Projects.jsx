@@ -1,15 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
+import chatAppImg from '../imageas/chatbotimage.png';
 
 const Projects = () => {
   const projects = [
     {
-      title: 'Project One',
-      description: 'A brief description of the project. This is a placeholder text to demonstrate the layout. It highlights the key features and purpose of the project.',
-      tags: ['React', 'Tailwind', 'Node.js'],
-      githubLink: '#',
-      demoLink: '#',
+      title: 'Chat Application',
+      description: 'A real-time chat application enabling users to send messages and share images instantly. Built with Socket.io and Node.js for seamless communication.',
+      tags: ['React', 'Tailwind', 'Node.js', 'Socket.io'],
+      githubLink: 'https://github.com/PeddintiPraneeth759/chatApplication.git',
+      demoLink: 'https://chatapplication-3m3r4.sevalla.app/',
+      image: chatAppImg,
     },
     {
       title: 'Project Two',

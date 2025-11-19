@@ -33,7 +33,7 @@ const Home = () => {
               I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div className="flex flex-col items-center sm:flex-row sm:justify-center md:justify-start gap-4">
               <Link to="/projects">
                 <motion.button
                   whileHover={{ scale: 1.05 }}

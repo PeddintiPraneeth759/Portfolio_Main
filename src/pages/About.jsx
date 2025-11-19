@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaSchool, FaUniversity } from 'react-icons/fa';
+import profileImg from '../imageas/praneeth.png';
 
 const About = () => {
   const education = [
@@ -86,8 +87,12 @@ const About = () => {
              className="relative"
           >
              {/* Placeholder for About Image */}
-             <div className="w-full h-64 md:h-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl flex items-center justify-center shadow-inner">
-                <span className="text-gray-400 dark:text-gray-500 font-medium">Profile Image Placeholder</span>
+             <div className="w-full h-64 md:h-full rounded-2xl overflow-hidden shadow-lg border-4 border-white dark:border-gray-800">
+                <img 
+                  src={profileImg} 
+                  alt="Praneeth Peddinti" 
+                  className="w-full h-full object-cover"
+                />
              </div>
           </motion.div>
         </div>

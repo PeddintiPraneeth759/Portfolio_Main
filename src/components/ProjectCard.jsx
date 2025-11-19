@@ -2,14 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 
-const ProjectCard = ({ title, description, tags, githubLink, demoLink }) => {
+const ProjectCard = ({ title, description, tags, githubLink, demoLink, image }) => {
   return (
     <motion.div
       whileHover={{ y: -10 }}
       className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full"
     >
-      <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-        <span className="text-white font-bold text-xl opacity-50">Project Preview</span>
+      <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center overflow-hidden">
+        {image ? (
+          <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+        ) : (
+          <span className="text-white font-bold text-xl opacity-50">Project Preview</span>
+        )}
       </div>
       <div className="p-6 flex-grow flex flex-col">
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
