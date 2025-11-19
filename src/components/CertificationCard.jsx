@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaAward } from 'react-icons/fa';
 
-const CertificationCard = ({ title, issuer, date, link }) => {
+const CertificationCard = ({ title, issuer, date, link, description }) => {
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -14,6 +14,11 @@ const CertificationCard = ({ title, issuer, date, link }) => {
       <div className="flex-grow">
         <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{title}</h3>
         <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">{issuer}</p>
+        {description && (
+          <p className="text-gray-500 dark:text-gray-400 text-xs mb-3 leading-relaxed">
+            {description}
+          </p>
+        )}
         <p className="text-gray-500 dark:text-gray-500 text-xs mb-4">{date}</p>
         <a
           href={link}

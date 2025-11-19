@@ -1,33 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CertificationCard from '../components/CertificationCard';
+import linguaskillPdf from '../imageas/Peddinti Praneeth.pdf';
 
 const Certifications = () => {
   const certifications = [
     {
-      title: 'Certified Full Stack Developer',
-      issuer: 'Example Organization',
-      date: 'August 2024',
-      link: '#',
+      title: 'Linguaskill General',
+      issuer: 'Cambridge Assessment English',
+      date: '2024',
+      link: linguaskillPdf,
+      description: 'Demonstrated proficiency in English language skills including listening, reading, speaking, and writing. Achieved CEFR Level B2/C1.',
     },
-    {
-      title: 'React.js Advanced Concepts',
-      issuer: 'Online Learning Platform',
-      date: 'June 2024',
-      link: '#',
-    },
-    {
-      title: 'Python for Data Science',
-      issuer: 'Tech University',
-      date: 'March 2024',
-      link: '#',
-    },
-    {
-      title: 'Cloud Computing Fundamentals',
-      issuer: 'Cloud Provider',
-      date: 'January 2024',
-      link: '#',
-    },
+
   ];
 
   const containerVariants = {

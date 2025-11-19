@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 
-const ProjectCard = ({ title, description, tags, githubLink, demoLink, image }) => {
+const ProjectCard = ({ title, description, tags, githubLink, backendGithubLink, demoLink, image }) => {
   return (
     <motion.div
       whileHover={{ y: -10 }}
@@ -30,23 +30,35 @@ const ProjectCard = ({ title, description, tags, githubLink, demoLink, image }) 
             </span>
           ))}
         </div>
-        <div className="flex gap-4 mt-auto">
+        <div className="flex gap-4 mt-auto flex-wrap">
           <a
             href={githubLink}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
           >
-            <FiGithub /> Code
+            <FiGithub /> {backendGithubLink ? 'Frontend' : 'Code'}
           </a>
-          <a
-            href={demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
-          >
-            <FiExternalLink /> Demo
-          </a>
+          {backendGithubLink && (
+            <a
+              href={backendGithubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+            >
+              <FiGithub /> Backend
+            </a>
+          )}
+          {demoLink && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+            >
+              <FiExternalLink /> Demo
+            </a>
+          )}
         </div>
       </div>
     </motion.div>

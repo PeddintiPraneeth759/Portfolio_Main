@@ -14,10 +14,11 @@ const Projects = () => {
       image: chatAppImg,
     },
     {
-      title: 'Project Two',
-      description: 'Another interesting project showcasing different skills. It solves a specific problem and uses modern technologies.',
-      tags: ['Python', 'Django', 'PostgreSQL'],
-      githubLink: '#',
+      title: 'Hospital Management System',
+      description: 'A comprehensive system for managing hospital operations. Features include patient registration, appointment scheduling, and doctor management. Built with a React frontend and Spring Boot backend.',
+      tags: ['React', 'Spring Boot', 'MySQL', 'Tailwind'],
+      githubLink: 'https://github.com/PeddintiPraneeth759/FinalProject_Frontend.git',
+      backendGithubLink: 'https://github.com/PeddintiPraneeth759/FinalProject_Backend.git',
       demoLink: '#',
     },
     {
