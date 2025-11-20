@@ -15,3 +15,72 @@ body {
     cursor: none !important;
   }
 }
+
+@keyframes text-wave {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-text-wave {
+  background: linear-gradient(-45deg,
+      #23a6d5,
+      #23d5ab,
+      #e73c7e,
+      #ee7752);
+  background-size: 300% 300%;
+  animation: text-wave 4s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes border-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.profile-image-container {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.profile-image-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg,
+      #3b82f6,
+      #8b5cf6,
+      #ec4899,
+      #3b82f6);
+  animation: border-rotate 4s linear infinite;
+  z-index: 0;
+}
+
+.profile-image-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}

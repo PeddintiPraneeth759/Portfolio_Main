@@ -24,9 +24,9 @@ const Home = () => {
               Welcome to my portfolio
             </h2>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
-              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Praneeth Peddinti</span>
+              Hi, I'm <span className="animate-text-wave">Praneeth Peddinti</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-medium text-gray-700 dark:text-gray-300 mb-6">
+            <h2 className="text-2xl md:text-3xl font-medium mb-6 animate-text-wave">
               Full Stack Web Developer
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
@@ -65,12 +65,14 @@ const Home = () => {
           >
              {/* Placeholder for 3D element or Hero Image */}
              <div className="w-64 h-64 md:w-96 md:h-96 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full opacity-20 absolute blur-3xl"></div>
-             <div className="relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800">
-                <img 
-                  src={profileImg} 
-                  alt="Praneeth Peddinti" 
-                  className="w-full h-full object-cover object-top"
-                />
+             <div className="relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-2xl shadow-2xl profile-image-container">
+                <div className="profile-image-content bg-white dark:bg-gray-800">
+                  <img 
+                    src={profileImg} 
+                    alt="Praneeth Peddinti" 
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
              </div>
           </motion.div>
         </div>
