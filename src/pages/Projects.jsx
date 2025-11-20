@@ -25,14 +25,14 @@ const Projects = () => {
       title: 'Web Automation Project',
       description: 'A versatile web automation tool utilizing Playwright and AI agents. Leverages LangGraph for multi-agent tasks and LLMs to streamline repetitive processes and increase efficiency.',
       tags: ['Playwright', 'LangGraph', 'LLM', 'AI Agents'],
-      githubLink: '#',
+      githubLink: 'https://github.com/PeddintiPraneeth759/webautomation',
       demoLink: '#',
     },
     {
       title: 'Fake News Assistant Chatbot',
       description: "An AI-powered chatbot designed to verify news authenticity using LLMs, LangChain, and LangGraph. It analyzes content to determine if it's real or fake, helping to combat misinformation.",
       tags: ['LLM', 'LangChain', 'LangGraph', 'NLP'],
-      githubLink: '#',
+      githubLink: 'https://github.com/PeddintiPraneeth759/fake-news-detector-ai-chatbot',
       demoLink: '#',
     },
   ];
