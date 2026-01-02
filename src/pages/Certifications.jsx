@@ -57,17 +57,25 @@ const Certifications = () => {
   };
 
   return (
-    <div className="min-h-screen py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-20 text-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[10%] right-[5%] w-[400px] h-[400px] bg-neon-purple/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-neon-blue/10 rounded-full blur-[100px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Certifications</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">My professional achievements and learning milestones.</p>
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">
+            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-blue">Certifications</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Milestones in my continuous learning journey and professional development.
+          </p>
         </motion.div>
 
         <motion.div
@@ -75,7 +83,7 @@ const Certifications = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {certifications.map((cert, index) => (
             <motion.div key={index} variants={itemVariants} className="h-full">

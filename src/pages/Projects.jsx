@@ -22,6 +22,13 @@ const Projects = () => {
       demoLink: '#',
     },
     {
+      title: 'Spring Boot Microservices Project',
+      description: 'A comprehensive Spring Boot microservices architecture project featuring Patient, Billing, Analytics, Auth, and API Gateway services. Built with gRPC, Kafka, PostgreSQL, JWT authentication, and containerized with Docker. Demonstrates event-driven architecture, service-to-service communication, and API security.',
+      tags: ['Spring Boot', 'Microservices', 'gRPC', 'Kafka', 'PostgreSQL', 'JWT', 'Docker'],
+      githubLink: 'https://github.com/PeddintiPraneeth759/SpringbootMicroServicesProject',
+      demoLink: '#',
+    },
+    {
       title: 'Web Automation Project',
       description: 'A versatile web automation tool utilizing Playwright and AI agents. Leverages LangGraph for multi-agent tasks and LLMs to streamline repetitive processes and increase efficiency.',
       tags: ['Playwright', 'LangGraph', 'LLM', 'AI Agents'],
@@ -35,6 +42,13 @@ const Projects = () => {
       githubLink: 'https://github.com/PeddintiPraneeth759/fake-news-detector-ai-chatbot',
       demoLink: '#',
     },
+    {
+      title: 'Ecommerce Website',
+      description: 'A full-featured e-commerce platform with product browsing, shopping cart functionality, user authentication, and order management. Designed to deliver a seamless online shopping experience.',
+      tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+      githubLink: 'https://github.com/PeddintiPraneeth759/Ecommerce-web',
+      demoLink: '#',
+    },
   ];
 
   const containerVariants = {
@@ -42,42 +56,47 @@ const Projects = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 50,
+      }
     },
   };
 
   return (
-    <div className="min-h-screen py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen pt-20 pb-20 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">My Projects</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">A selection of my recent work.</p>
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">Projects</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            A showcase of my technical journey, from full-stack applications to AI-powered tools.
+          </p>
         </motion.div>
 
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <motion.div key={index} variants={itemVariants} className="h-full">
               <ProjectCard {...project} />
             </motion.div>
           ))}

@@ -5,12 +5,12 @@ const SkillCard = ({ name, icon, color }) => {
   return (
     <motion.div
       whileHover={{ y: -5, scale: 1.05 }}
-      className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col items-center justify-center gap-4 group"
+      className="glass-card p-6 flex flex-col items-center justify-center gap-4 group hover:border-neon-blue/30 hover:shadow-[0_0_20px_rgba(0,243,255,0.15)]"
     >
-      <div className={`text-4xl ${color} group-hover:scale-110 transition-transform duration-300`}>
+      <div className={`text-5xl ${color} group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 drop-shadow-lg`}>
         {icon}
       </div>
-      <h3 className="font-semibold text-gray-800 dark:text-gray-200">{name}</h3>
+      <h3 className="font-display font-medium text-gray-300 group-hover:text-white transition-colors">{name}</h3>
     </motion.div>
   );
 };

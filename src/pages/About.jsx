@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaSchool, FaUniversity } from 'react-icons/fa';
+import { FaGraduationCap, FaSchool, FaUniversity, FaCode, FaLaptopCode } from 'react-icons/fa';
 import profileImg from '../imageas/praneeth.png';
 
 const About = () => {
@@ -10,7 +10,7 @@ const About = () => {
       institution: 'KL University',
       degree: 'B.Tech CSE',
       year: 'Expected 2027',
-      description: 'Pursuing Bachelor of Technology in Computer Science and Engineering.',
+      description: 'Pursuing Bachelor of Technology in Computer Science and Engineering. Focusing on Full Stack Development and AI.',
       icon: <FaUniversity />,
     },
     {
@@ -26,106 +26,131 @@ const About = () => {
       institution: 'Sri Siddhartha High School',
       degree: 'Secondary School',
       year: '2020',
-      description: 'Completed secondary education.',
+      description: 'Completed secondary education with distinction.',
       icon: <FaGraduationCap />,
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
   return (
-    <div className="min-h-screen py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-        </motion.div>
+    <div className="min-h-screen text-white">
+      {/* Header Section */}
+      <div className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
+           <div className="absolute top-10 left-10 w-64 h-64 bg-neon-purple/20 rounded-full blur-[100px]" />
+           <div className="absolute bottom-10 right-10 w-64 h-64 bg-neon-blue/20 rounded-full blur-[100px]" />
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-16"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Get to know me!</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-              I'm a passionate <strong>Full Stack Web Developer</strong> based in India. I enjoy building web applications that solve real-world problems.
-            </p>
-            <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-              I am currently pursuing my B.Tech in Computer Science at KL University. My journey in tech has been driven by curiosity and a desire to create.
-            </p>
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              When I'm not coding, you can find me exploring new technologies, learning about AI agents, or working on personal projects to sharpen my skills.
+            <h1 className="text-5xl md:text-7xl font-display font-bold mb-6">
+              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">Me</span>
+            </h1>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              A journey fueled by curiosity, code, and coffee. Here's a glimpse into my world.
             </p>
           </motion.div>
 
-          <motion.div
-             initial={{ opacity: 0, x: 50 }}
-             animate={{ opacity: 1, x: 0 }}
-             transition={{ duration: 0.5, delay: 0.4 }}
-             className="relative"
-          >
-             {/* Placeholder for About Image */}
-             <div className="w-full h-64 md:h-full rounded-2xl overflow-hidden shadow-lg border-4 border-white dark:border-gray-800">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative z-10 glass-panel p-2 rounded-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
                 <img 
                   src={profileImg} 
                   alt="Praneeth Peddinti" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto rounded-xl shadow-2xl"
                 />
-             </div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-purple blur-2xl opacity-20 -z-10 transform rotate-6 scale-105" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+              className="space-y-6"
+            >
+              <div className="glass-card p-8 hover:bg-white/5 transition-colors">
+                <FaLaptopCode className="text-4xl text-neon-blue mb-4" />
+                <h3 className="text-2xl font-display font-bold mb-3">Who I Am</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  I'm Praneeth, a passionate <strong>Full Stack Web Developer</strong> based in India. 
+                  I don't just write code; I craft digital experiences. My passion lies in building 
+                  scalable web applications that solve real-world problems and leave a lasting impact.
+                </p>
+              </div>
+
+              <div className="glass-card p-8 hover:bg-white/5 transition-colors">
+                <FaCode className="text-4xl text-neon-purple mb-4" />
+                <h3 className="text-2xl font-display font-bold mb-3">What I Do</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Currently pursuing my B.Tech in Computer Science at KL University, I specialize in 
+                  the MERN stack and modern frontend technologies. I'm constantly exploring new 
+                  horizons in AI agents and cloud computing.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Timeline Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-16">
+              Education <span className="text-neon-blue">&</span> Journey
+            </h2>
+
+            <div className="relative max-w-4xl mx-auto">
+              {/* Vertical Line */}
+              <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-neon-blue to-transparent md:-translate-x-1/2 ml-8 md:ml-0" />
+
+              {education.map((edu, index) => (
+                <motion.div
+                  key={edu.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  className={`relative flex items-center justify-between md:justify-normal mb-12 ${
+                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                  }`}
+                >
+                  {/* Timeline Dot */}
+                  <div className="absolute left-0 md:left-1/2 w-16 h-16 flex items-center justify-center md:-translate-x-1/2 z-10">
+                    <div className="w-4 h-4 bg-neon-blue rounded-full shadow-[0_0_20px_rgba(0,243,255,0.5)] ring-4 ring-dark-bg" />
+                  </div>
+
+                  {/* Content Card */}
+                  <div className={`w-[calc(100%-5rem)] md:w-[calc(50%-3rem)] ml-20 md:ml-0 glass-card p-6 hover:border-neon-blue/50 transition-colors group ${
+                    index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
+                  }`}>
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-neon-purple text-xl group-hover:scale-110 transition-transform duration-300">
+                        {edu.icon}
+                      </span>
+                      <span className="text-sm font-mono text-neon-blue">{edu.year}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-1">{edu.institution}</h3>
+                    <h4 className="text-gray-400 font-medium mb-3">{edu.degree}</h4>
+                    <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
+                      {edu.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Education</h3>
-          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
-            {education.map((edu, index) => (
-              <motion.div
-                key={edu.id}
-                variants={itemVariants}
-                className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
-              >
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-primary text-slate-500 group-[.is-active]:text-slate-100 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                  {edu.icon}
-                </div>
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
-                  <div className="flex items-center justify-between space-x-2 mb-1">
-                    <div className="font-bold text-gray-900 dark:text-white">{edu.institution}</div>
-                    <time className="font-caveat font-medium text-primary dark:text-blue-400">{edu.year}</time>
-                  </div>
-                  <div className="text-slate-500 dark:text-slate-400">{edu.degree}</div>
-                  <div className="text-slate-500 dark:text-slate-400 text-sm mt-2">{edu.description}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </div>
   );

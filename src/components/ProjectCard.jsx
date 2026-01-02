@@ -1,62 +1,93 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import { FiGithub, FiExternalLink, FiFolder } from 'react-icons/fi';
 
 const ProjectCard = ({ title, description, tags, githubLink, backendGithubLink, demoLink, image }) => {
   return (
     <motion.div
       whileHover={{ y: -10 }}
-      className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full"
+      className="group relative bg-glass-white backdrop-blur-md border border-glass-border rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,243,255,0.15)] hover:border-neon-blue/30 flex flex-col h-full"
     >
-      <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center overflow-hidden">
+      {/* Image Section with Overlay */}
+      <div className="relative h-48 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent z-10 opacity-60" />
         {image ? (
-          <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1" 
+          />
         ) : (
-          <span className="text-white font-bold text-xl opacity-50">Project Preview</span>
+          <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+            <FiFolder className="text-6xl text-gray-700 group-hover:text-neon-blue transition-colors duration-300" />
+          </div>
         )}
+        
+        {/* Links Overlay (Visible on Hover) */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm">
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 bg-white text-black rounded-full hover:scale-110 transition-transform"
+            title="View Code"
+          >
+            <FiGithub size={20} />
+          </a>
+          {demoLink && demoLink !== '#' && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-neon-blue text-black rounded-full hover:scale-110 transition-transform"
+              title="Live Demo"
+            >
+              <FiExternalLink size={20} />
+            </a>
+          )}
+        </div>
       </div>
-      <div className="p-6 flex-grow flex flex-col">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow text-sm leading-relaxed">
+
+      {/* Content Section */}
+      <div className="p-6 flex-grow flex flex-col relative z-10">
+        <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-neon-blue transition-colors">
+          {title}
+        </h3>
+        
+        <p className="text-gray-400 mb-6 flex-grow text-sm leading-relaxed line-clamp-3">
           {description}
         </p>
+
+        {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-6">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="px-3 py-1 text-xs font-medium bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded-full"
+              className="px-3 py-1 text-xs font-medium bg-white/5 border border-white/10 text-gray-300 rounded-full group-hover:border-neon-blue/30 group-hover:text-neon-blue transition-colors"
             >
               {tag}
             </span>
           ))}
         </div>
-        <div className="flex gap-4 mt-auto flex-wrap">
-          <a
+
+        {/* Footer Links (Mobile/Fallback) */}
+        <div className="flex gap-4 mt-auto pt-4 border-t border-white/5">
+           <a
             href={githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+            className="flex items-center gap-2 text-xs text-gray-500 hover:text-white transition-colors"
           >
-            <FiGithub /> {backendGithubLink ? 'Frontend' : 'Code'}
+            <FiGithub /> {backendGithubLink ? 'Frontend' : 'Source'}
           </a>
           {backendGithubLink && (
             <a
               href={backendGithubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+              className="flex items-center gap-2 text-xs text-gray-500 hover:text-white transition-colors"
             >
               <FiGithub /> Backend
-            </a>
-          )}
-          {demoLink && (
-            <a
-              href={demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
-            >
-              <FiExternalLink /> Demo
             </a>
           )}
         </div>

@@ -71,30 +71,41 @@ const Skills = () => {
   };
 
   return (
-    <div className="min-h-screen py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-20 text-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-20 left-[-10%] w-[500px] h-[500px] bg-neon-blue/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-20 right-[-10%] w-[500px] h-[500px] bg-neon-purple/10 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Technical Skills</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">My technical proficiency and toolset.</p>
+          <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">
+            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">Skills</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            My technical proficiency and toolset for building digital solutions.
+          </p>
         </motion.div>
 
-        <div className="space-y-16">
+        <div className="space-y-20">
           {skillsData.map((category, index) => (
             <div key={index}>
-              <motion.h3
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8 border-l-4 border-primary pl-4"
+                className="flex items-center gap-4 mb-8"
               >
-                {category.category}
-              </motion.h3>
+                <div className="h-px flex-grow bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                <h3 className="text-2xl font-display font-bold text-white whitespace-nowrap">
+                  {category.category}
+                </h3>
+                <div className="h-px flex-grow bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+              </motion.div>
+              
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
