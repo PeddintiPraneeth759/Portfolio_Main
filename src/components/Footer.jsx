@@ -1,13 +1,14 @@
 import React from 'react';
-import { FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     { icon: <FiGithub />, href: 'https://github.com/PeddintiPraneeth759', label: 'GitHub' },
-    { icon: <FiLinkedin />, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: <FiMail />, href: 'mailto:praneeth@example.com', label: 'Email' },
+    { icon: <FiLinkedin />, href: '/contact', label: 'Contact', isInternal: true },
+    { icon: <FiMail />, href: 'mailto:2300031788cseh1@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -19,18 +20,29 @@ const Footer = () => {
         </div>
 
         <div className="flex gap-4">
-          {socialLinks.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-neon-blue transition-all duration-300 hover:-translate-y-1"
-              aria-label={social.label}
-            >
-              {social.icon}
-            </a>
-          ))}
+          {socialLinks.map((social) => 
+            social.isInternal ? (
+              <Link
+                key={social.label}
+                to={social.href}
+                className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-neon-blue transition-all duration-300 hover:-translate-y-1"
+                aria-label={social.label}
+              >
+                {social.icon}
+              </Link>
+            ) : (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-neon-blue transition-all duration-300 hover:-translate-y-1"
+                aria-label={social.label}
+              >
+                {social.icon}
+              </a>
+            )
+          )}
         </div>
 
         <div className="text-gray-500 text-sm">

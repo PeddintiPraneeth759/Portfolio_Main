@@ -71,9 +71,9 @@ const Home = () => {
             <a href="https://github.com/PeddintiPraneeth759" target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-white/20 hover:text-white transition-all text-gray-400">
               <FiGithub size={20} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-white/20 hover:text-white transition-all text-gray-400">
+            <Link to="/contact" className="p-3 bg-white/5 rounded-full hover:bg-white/20 hover:text-white transition-all text-gray-400">
               <FiLinkedin size={20} />
-            </a>
+            </Link>
           </div>
         </div>
       </motion.div>

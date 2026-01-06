@@ -121,7 +121,7 @@ const Contact = () => {
                 <a href="https://github.com/PeddintiPraneeth759" target="_blank" rel="noreferrer" className="p-4 bg-white/5 rounded-xl hover:bg-white/10 hover:text-neon-blue transition-all duration-300 hover:-translate-y-1">
                   <FaGithub size={24} />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="p-4 bg-white/5 rounded-xl hover:bg-white/10 hover:text-neon-blue transition-all duration-300 hover:-translate-y-1">
+                <a href="mailto:2300031788cseh1@gmail.com" className="p-4 bg-white/5 rounded-xl hover:bg-white/10 hover:text-neon-blue transition-all duration-300 hover:-translate-y-1" title="Contact via Email">
                   <FaLinkedin size={24} />
                 </a>
               </div>
